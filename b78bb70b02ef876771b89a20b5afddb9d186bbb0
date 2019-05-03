@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "078fec6e_51b41f07",
+        "filename": "ansible/roles/helm/tasks/config.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 187
+      },
+      "writtenOn": "2019-05-03T13:41:00Z",
+      "side": 1,
+      "message": "this should be named differently than the previous one since it applies the effective rights mask not the user rights",
+      "range": {
+        "startLine": 35,
+        "startChar": 8,
+        "endLine": 35,
+        "endChar": 72
+      },
+      "revId": "b78bb70b02ef876771b89a20b5afddb9d186bbb0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c9442c87_be298c24",
+        "filename": "ansible/roles/helm/tasks/config.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 187
+      },
+      "writtenOn": "2019-05-03T13:41:00Z",
+      "side": 1,
+      "message": "this should be removed",
+      "range": {
+        "startLine": 64,
+        "startChar": 16,
+        "endLine": 64,
+        "endChar": 21
+      },
+      "revId": "b78bb70b02ef876771b89a20b5afddb9d186bbb0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e1f63d80_9273e90a",
+        "filename": "src/chart-repo-handler/README.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 187
+      },
+      "writtenOn": "2019-05-03T13:41:00Z",
+      "side": 1,
+      "message": "typo",
+      "range": {
+        "startLine": 11,
+        "startChar": 78,
+        "endLine": 11,
+        "endChar": 83
+      },
+      "revId": "b78bb70b02ef876771b89a20b5afddb9d186bbb0",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    }
+  ]
+}
