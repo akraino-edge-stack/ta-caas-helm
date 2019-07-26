@@ -16,6 +16,24 @@
       "revId": "b2a47baf6ec9ba8238489cf175a771ee30665e37",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d48f2219_e7d7d396",
+        "filename": "ansible/roles/chart_repo/templates/chart-repo.yml",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-26T08:09:50Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e6d33733_ef071bf9",
+      "revId": "b2a47baf6ec9ba8238489cf175a771ee30665e37",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
     }
   ]
 }
