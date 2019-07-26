@@ -33,6 +33,7 @@ dependencies:
   - role: cert
     instance: "chart-repo{{ nodeindex }}"
     cert_path: /etc/chart-repo/ssl
+    common_name: "chartrepo-server"
     add_users:
       - chartrepo
     alt_names:
