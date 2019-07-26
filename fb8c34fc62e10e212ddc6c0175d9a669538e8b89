@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c44f1fe9_d5f85d26",
+        "filename": "SPECS/caas-chartrepo.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 186
+      },
+      "writtenOn": "2019-07-26T15:03:22Z",
+      "side": 1,
+      "message": "Extra whitespace.",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "fb8c34fc62e10e212ddc6c0175d9a669538e8b89",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
