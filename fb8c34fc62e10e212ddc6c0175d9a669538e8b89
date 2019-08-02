@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "44e4a141_9971a489",
+        "filename": "SPECS/caas-chartrepo.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-08-02T07:02:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c44f1fe9_d5f85d26",
+      "range": {
+        "startLine": 18,
+        "startChar": 27,
+        "endLine": 18,
+        "endChar": 28
+      },
+      "revId": "fb8c34fc62e10e212ddc6c0175d9a669538e8b89",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "89524d52_81991442",
         "filename": "ansible/roles/chart_repo/meta/main.yml",
         "patchSetId": 1
@@ -36,6 +60,24 @@
       "writtenOn": "2019-07-31T18:12:46Z",
       "side": 1,
       "message": "it is not like we have anything else other than the server :)",
+      "revId": "fb8c34fc62e10e212ddc6c0175d9a669538e8b89",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1cf7d74_277ecbdf",
+        "filename": "ansible/roles/chart_repo/meta/main.yml",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-08-02T07:02:27Z",
+      "side": 1,
+      "message": "Changed",
+      "parentUuid": "89524d52_81991442",
       "revId": "fb8c34fc62e10e212ddc6c0175d9a669538e8b89",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
