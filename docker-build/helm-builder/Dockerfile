@@ -40,5 +40,6 @@ RUN yum install -y --setopt=skip_missing_names_on_install=False \
 &&  mv ./_dist/linux-amd64/tiller ${binaries}/ \
 &&  mv ./_dist/linux-amd64/helm ${binaries}/ \
 &&  rm -rf $GOPATH \
+&&  rm -rf $go_install_dir \
 &&  rm -rf /build \
 &&  rm -rf /root/.glide
