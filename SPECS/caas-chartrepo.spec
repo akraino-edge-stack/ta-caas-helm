@@ -15,7 +15,8 @@
 %define COMPONENT chartrepo
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 1.0.0
-%define RPM_MINOR_VERSION 8
+%define RPM_MINOR_VERSION 9
+%define go_version 1.12.9
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
 %define docker_save_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-save
@@ -51,6 +52,7 @@ docker build \
   --build-arg http_proxy="${http_proxy}" \
   --build-arg https_proxy="${https_proxy}" \
   --build-arg no_proxy="${no_proxy}" \
+  --build-arg go_version="${go_version}"
   --tag %{COMPONENT}:%{IMAGE_TAG} \
   %{docker_build_dir}/chartrepohandler
 mkdir -p %{docker_save_dir}
