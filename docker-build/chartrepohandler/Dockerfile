@@ -18,11 +18,18 @@ MAINTAINER Krisztian Lengyel <krisztian.lengyel@nokia.com>
 COPY mainstart.sh /usr/bin/mainstart.sh
 COPY chart-repo-handler /chart-repo-handler
 ENV GOPATH /build
+ARG go_install_dir="/usr/local/go"
+ARG go_version
+
 
 # TODO remake build
 RUN adduser -u 150 -D -H chartrepo \
-&& apk add --no-cache --virtual .build-deps go gcc g++ git glide \
+&& apk add --no-cache --virtual .build-deps go gcc g++ git glide bash \
 && apk add --no-cache curl \
+&& mkdir -p $go_install_dir \
+&& curl -fsSL -k https://dl.google.com/go/go${go_version}.src.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
+&& cd ${go_install_dir}/src/ \
+&& ./make.bash \
 && mkdir -p $GOPATH/src \
 && mv /chart-repo-handler $GOPATH/src/chart-repo-handler \
 && cd $GOPATH/src/chart-repo-handler \
