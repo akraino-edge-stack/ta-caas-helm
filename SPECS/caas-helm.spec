@@ -15,7 +15,7 @@
 %define COMPONENT helm
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 2.14.3
-%define RPM_MINOR_VERSION 2
+%define RPM_MINOR_VERSION 3
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define go_version 1.12.9
 %define binary_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/binary-save
@@ -28,7 +28,7 @@ Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service %{COMPONENT} component
 License:        %{_platform_licence} and MIT license and BSD and Apache License and Lesser General Public License
-BuildArch:      x86_64
+BuildArch:      %{_arch}
 Vendor:         %{_platform_vendor} and helm/helm unmodified
 Source0:        %{name}-%{version}.tar.gz
 
@@ -57,6 +57,7 @@ docker build \
   --build-arg HELM_VERSION="%{version}" \
   --build-arg go_version="%{go_version}" \
   --build-arg binaries="%{built_binaries_dir}" \
+  --build-arg CENTOS_ARCH="$(uname -m)" \
   --tag helm-builder:%{IMAGE_TAG} \
   %{docker_build_dir}/helm-builder
 
