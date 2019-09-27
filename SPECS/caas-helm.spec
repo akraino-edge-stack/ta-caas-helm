@@ -15,25 +15,26 @@
 %define COMPONENT helm
 %define RPM_NAME caas-%{COMPONENT}
 %define RPM_MAJOR_VERSION 2.14.3
-%define RPM_MINOR_VERSION 2
+%define RPM_MINOR_VERSION 3
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
 %define go_version 1.12.9
 %define binary_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/binary-save
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
 %define docker_save_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-save
 %define built_binaries_dir /binary-save
+%define centos_build 191001
 
 Name:           %{RPM_NAME}
 Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service %{COMPONENT} component
 License:        %{_platform_licence} and MIT license and BSD and Apache License and Lesser General Public License
-BuildArch:      x86_64
+BuildArch:      %{_arch}
 Vendor:         %{_platform_vendor} and helm/helm unmodified
 Source0:        %{name}-%{version}.tar.gz
 
 Requires: docker-ce >= 18.09.2, rsync
-BuildRequires: docker-ce-cli >= 18.09.2, rsync, xz
+BuildRequires: docker-ce-cli >= 18.09.2, rsync, xz, wget
 
 %description
 This rpm contains the %{COMPONENT} container for CaaS subsystem.
@@ -43,6 +44,7 @@ This container contains the %{COMPONENT} service.
 %autosetup
 
 %build
+wget --progress=dot:giga http://artifacts.ci.centos.org/sig-cloudinstance/centos-7-%{centos_build}/%{_arch}/centos-7-%{_arch}-docker.tar.xz -O %{docker_build_dir}/helm-builder/centos-7-docker.tar.xz
 # Build Helm binaries
 docker build \
   --network=host \

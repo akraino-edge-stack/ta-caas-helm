@@ -12,7 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM centos:7.6.1810
+FROM scratch
+ADD centos-7-docker.tar.xz /
+CMD ["/bin/bash"]
+
 MAINTAINER Krisztian Lengyel <krisztian.lengyel@nokia.com>
 
 ARG HELM_VERSION
@@ -28,7 +31,8 @@ ENV PATH="$GOPATH/bin:$go_install_dir/bin:$PATH"
 RUN yum install -y --setopt=skip_missing_names_on_install=False \
       ${build_packages} \
 &&  mkdir -p $go_install_dir \
-&&  curl -fsSL -k https://dl.google.com/go/go${go_version}.linux-amd64.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
+&&  if [ $(uname -m) == 'aarch64' ]; then HOST_ARCH=arm64; else HOST_ARCH=amd64; fi \
+&&  curl -fsSL -k https://dl.google.com/go/go${go_version}.linux-${HOST_ARCH}.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
 \
 # Build Helm
 &&  mkdir -p $GOPATH/src/k8s.io \
@@ -37,8 +41,8 @@ RUN yum install -y --setopt=skip_missing_names_on_install=False \
 &&  cd helm \
 &&  make GIT_TAG=v${HELM_VERSION} bootstrap build-cross \
 &&  mkdir -p ${binaries} \
-&&  mv ./_dist/linux-amd64/tiller ${binaries}/ \
-&&  mv ./_dist/linux-amd64/helm ${binaries}/ \
+&&  mv ./_dist/linux-${HOST_ARCH}/tiller ${binaries}/ \
+&&  mv ./_dist/linux-${HOST_ARCH}/helm ${binaries}/ \
 &&  rm -rf $GOPATH \
 &&  rm -rf $go_install_dir \
 &&  rm -rf /build \
