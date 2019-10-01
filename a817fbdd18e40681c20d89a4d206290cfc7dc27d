@@ -16,6 +16,24 @@
       "revId": "a817fbdd18e40681c20d89a4d206290cfc7dc27d",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd94a87d_5d15fed1",
+        "filename": "SPECS/caas-helm.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 137
+      },
+      "writtenOn": "2019-10-01T15:29:23Z",
+      "side": 1,
+      "message": "This is actually the ugliest part of all these patches ...\nAnd that\u0027s only because the 7.6.1810 centos manifest does not list the arm64/v8 tag.\nMy hope was that they would release a new CentOS tag (note that :latest and :7 have proper arm64 support) which will make this hack obsolete.\n\nSo to avoid fragmentation and use the same release, we can either:\n- use FROM centos:7\n- wait for a new centos stable version tag with arm64 support (it might happen in the immediate future, I see some ongoing activity on dockerhub for the centos image pushes);",
+      "parentUuid": "0ff346ca_f8715a92",
+      "revId": "a817fbdd18e40681c20d89a4d206290cfc7dc27d",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
