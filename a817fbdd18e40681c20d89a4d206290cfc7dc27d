@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "0ff346ca_f8715a92",
+        "filename": "SPECS/caas-helm.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-01T14:57:56Z",
+      "side": 1,
+      "message": "this is container, so we can use whatever image we want\nif we can use a newer one for both, then let\u0027s use a newer on for both and avoid fragmentation",
+      "revId": "a817fbdd18e40681c20d89a4d206290cfc7dc27d",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
