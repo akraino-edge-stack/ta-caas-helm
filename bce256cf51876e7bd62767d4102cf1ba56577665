@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "edfa1220_edeb46e5",
+        "filename": "docker-build/helm-builder/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-11T11:38:50Z",
+      "side": 1,
+      "message": "instead of manually downloading an archive would it be possible to simply pull a pre-built image by commit hash?\nI remember you mentioned the problem is that the image is not tagged, but it exists on Docker Hub\nif possible, I would prefer that approach a little bit better. easier to change it back once the image gets tagged",
+      "revId": "bce256cf51876e7bd62767d4102cf1ba56577665",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
