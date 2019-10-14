@@ -16,6 +16,24 @@
       "revId": "bce256cf51876e7bd62767d4102cf1ba56577665",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c36c497_2072eaa1",
+        "filename": "docker-build/helm-builder/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 137
+      },
+      "writtenOn": "2019-10-14T16:11:39Z",
+      "side": 1,
+      "message": "Sure, that was my original implementation for this, where we defined CENTOS_BASE as a docker ARG and set it in the spec file to \u0027centos:7.6...\u0027 for x86_64 and to \u0027centos@sh256:...\u0027 for aarch64.\n\nUnfortunately the sha256 hashes are separate for each image, so the x86_64 image would have a different sha256 than the aarch64 one; so we can\u0027t use a single `FROM centos@sha256:...`.\n\nIf that\u0027s the preffered approach and nobody objects, let me know and I will rebase all the  pending TA changes for AArch64 suppport to use this method.",
+      "parentUuid": "edfa1220_edeb46e5",
+      "revId": "bce256cf51876e7bd62767d4102cf1ba56577665",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
