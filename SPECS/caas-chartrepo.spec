@@ -26,7 +26,7 @@ Version:        %{RPM_MAJOR_VERSION}
 Release:        %{RPM_MINOR_VERSION}%{?dist}
 Summary:        Containers as a Service %{COMPONENT} component
 License:        %{_platform_licence} and MIT license and BSD and Apache License and Lesser General Public License
-BuildArch:      x86_64
+BuildArch:      %{_arch}
 Vendor:         %{_platform_vendor} and kubernetes/kubernetes unmodified
 Source0:        %{name}-%{version}.tar.gz
 
