@@ -34,6 +34,24 @@
       "revId": "bce256cf51876e7bd62767d4102cf1ba56577665",
       "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b46273d_4914d028",
+        "filename": "docker-build/helm-builder/Dockerfile",
+        "patchSetId": 3
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 183
+      },
+      "writtenOn": "2019-10-15T08:16:05Z",
+      "side": 1,
+      "message": "ah, okay. I thought it is the same image at least\nnevermind then, current way is okay and can go into all relevant repos",
+      "parentUuid": "0c36c497_2072eaa1",
+      "revId": "bce256cf51876e7bd62767d4102cf1ba56577665",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
     }
   ]
 }
