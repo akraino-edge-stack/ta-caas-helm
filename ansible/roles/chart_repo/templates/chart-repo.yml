@@ -63,9 +63,9 @@ spec:
             - name: CHARTREPOHANDLER_INDEXPATH
               value: charts
             - name: CHARTREPOHANDLER_TLSCERTPATH
-              value: /etc/chart-repo/ssl/chart-repo{{ nodeindex }}.pem
+              value: /etc/chart-repo/ssl/chart-repo.pem
             - name: CHARTREPOHANDLER_TLSKEYPATH
-              value: /etc/chart-repo/ssl/chart-repo{{ nodeindex }}-key.pem
+              value: /etc/chart-repo/ssl/chart-repo-key.pem
             - name: CHARTREPOHANDLER_TLSCAPATH
               value: /etc/chart-repo/ssl/ca.pem
           volumeMounts:
