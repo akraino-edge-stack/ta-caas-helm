@@ -31,7 +31,7 @@ dependencies:
     become_user: "root"
 
   - role: cert
-    instance: "chart-repo{{ nodeindex }}"
+    instance: "chart-repo"
     cert_path: /etc/chart-repo/ssl
     common_name: "chart-repo"
     add_users:
