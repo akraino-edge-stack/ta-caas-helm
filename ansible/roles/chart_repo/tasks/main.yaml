@@ -24,7 +24,7 @@
     dest: "{{ caas.manifests_directory }}/chart-repo_service.yml"
 
 - name: Authenticate into swift
-  shell: 'curl -XGET -i -H"X-Auth-User:{{ caas.swift_credential.tenant }}:{{ caas.swift_credential.user }}" -H"X-Auth-Key:{{ caas.swift_credential.password }}" {{ caas.swift }}/auth/v1.0 | grep X-Auth-Token: | awk "{ print \$2 }"'
+  shell: 'curl -XGET -H"X-Auth-User:{{ caas.swift_credential.tenant }}:{{ caas.swift_credential.user }}" -H"X-Auth-Key:{{ caas.swift_credential.password }}" {{ caas.swift }}/auth/v1.0 | grep X-Auth-Token: | awk "{ print \$2 }"'
   register: SWIFT_AUTH_KEY
 
 - name: Create packages folder/container into swift
