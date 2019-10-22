@@ -35,10 +35,9 @@ RUN yum install -y --setopt=skip_missing_names_on_install=False \
 &&  curl -fsSL -k https://dl.google.com/go/go${go_version}.linux-${HOST_ARCH}.tar.gz | tar zx --strip-components=1 -C ${go_install_dir} \
 \
 # Build Helm
-&&  mkdir -p $GOPATH/src/k8s.io \
-&&  cd $GOPATH/src/k8s.io \
-&&  git clone https://github.com/kubernetes/helm.git \
-&&  cd helm \
+&&  mkdir -p $GOPATH/src/k8s.io/helm \
+&&  curl -fsSL -k https://get.helm.sh/helm-v$2.15.0-linux-amd64.tar.gz | tar zx --strip-components=1 -C $GOPATH/src/k8s.io/helm \
+&&  cd $GOPATH/src/k8s.io/helm \
 &&  make GIT_TAG=v${HELM_VERSION} bootstrap build-cross \
 &&  mkdir -p ${binaries} \
 &&  mv ./_dist/linux-${HOST_ARCH}/tiller ${binaries}/ \
