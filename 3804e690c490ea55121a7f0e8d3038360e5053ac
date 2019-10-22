@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29760d18_561cdbaa",
+        "filename": "docker-build/helm-builder/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 184
+      },
+      "writtenOn": "2019-10-22T13:36:01Z",
+      "side": 1,
+      "message": "Really ?",
+      "revId": "3804e690c490ea55121a7f0e8d3038360e5053ac",
+      "serverId": "4cada01b-0314-4fe0-84a1-f9ddc89863f9",
+      "unresolved": true
+    }
+  ]
+}
