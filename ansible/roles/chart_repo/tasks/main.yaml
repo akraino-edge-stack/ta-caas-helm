@@ -24,14 +24,14 @@
     dest: "{{ caas.manifests_directory }}/chart-repo_service.yml"
 
 - name: Authenticate into swift
-  shell: 'curl -XGET -i -H"X-Auth-User:{{ caas.swift_credential.tenant }}:{{ caas.swift_credential.user }}" -H"X-Auth-Key:{{ caas.swift_credential.password }}" {{ caas.swift }}/auth/v1.0 | grep X-Auth-Token: | awk "{ print \$2 }"'
+  shell: 'curl -ifs -XGET -H"X-Auth-User:{{ caas.swift_credential.tenant }}:{{ caas.swift_credential.user }}" -H"X-Auth-Key:{{ caas.swift_credential.password }}" {{ caas.swift }}/auth/v1.0 | grep X-Auth-Token: | awk "{ print \$2 }"'
   register: SWIFT_AUTH_KEY
 
 - name: Create packages folder/container into swift
-  shell: 'curl -XPUT -H"X-Auth-Token: {{ SWIFT_AUTH_KEY.stdout }}" {{ caas.swift }}/v1.0/AUTH_admin/packages'
+  shell: 'curl -fs -XPUT -H"X-Auth-Token: {{ SWIFT_AUTH_KEY.stdout }}" {{ caas.swift }}/v1.0/AUTH_admin/packages'
 
 - name: Read the swift main folder/container and check if is there the packages folder/conatiner
-  shell: 'curl -XGET -H"X-Auth-Token: {{ SWIFT_AUTH_KEY.stdout }}" {{ caas.swift }}/v1.0/AUTH_admin | grep packages'
+  shell: 'curl -fs -XGET -H"X-Auth-Token: {{ SWIFT_AUTH_KEY.stdout }}" {{ caas.swift }}/v1.0/AUTH_admin | grep packages'
 
 - name: start chart repo handler
   kubectl:
