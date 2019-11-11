@@ -14,10 +14,10 @@
 
 %define COMPONENT helm
 %define RPM_NAME caas-%{COMPONENT}
-%define RPM_MAJOR_VERSION 2.15.2
+%define RPM_MAJOR_VERSION 2.16.0
 %define RPM_MINOR_VERSION 0
 %define IMAGE_TAG %{RPM_MAJOR_VERSION}-%{RPM_MINOR_VERSION}
-%define go_version 1.12.10
+%define go_version 1.13.3
 %define binary_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/binary-save
 %define docker_build_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-build
 %define docker_save_dir %{_builddir}/%{RPM_NAME}-%{RPM_MAJOR_VERSION}/docker-save
